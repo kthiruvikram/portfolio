@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiruvikram Karthikeyan's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 400;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f7f7f7;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Thiruvikram Karthikeyan</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Hello, I'm Thiruvikram Karthikeyan</h2>
+    <p>ECE @ NHCE | Full Stack & ML Learner | Building MoodPlay 🎧 | Dreaming Big 🚀</p>
+  </div>
+
+  <section id="about">
+    <h3>About Me</h3>
+    <p>I'm Thiruvikram, a second-year Electronics & Communication Engineering student at New Horizon College of Engineering (NHCE). I'm exploring Full Stack Development, Machine Learning, and Embedded Systems. I'm currently building MoodPlay, a music player that adapts to your emotions. I'm also pursuing an IBM Full Stack Certification and learning Japanese (N4 level).</p>
+  </section>
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <p>Currently working on several portfolio projects to showcase my skills in HTML, CSS, JavaScript, and beyond. Stay tuned for more!</p>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Want to connect or collaborate? Reach out to me at:</p>
+    <p>Email: kthiruvikram@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/thiruvikram-karthikeyan-924a7a317" target="_blank">linkedin.com/in/thiruvikram-karthikeyan-924a7a317</a></p>
+    <p>GitHub: <a href="https://github.com/abraham" target="_blank">github.com/abraham</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Thiruvikram Karthikeyan. All rights reserved.
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const options = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+
+</html>
+
+
